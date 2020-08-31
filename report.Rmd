@@ -1,0 +1,57 @@
+---
+title: "3D Lineplots"
+date: "Dokument erstellt am `r Sys.Date()`"
+author: "Michael Schmid" 
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+    toc_depth: 2
+    theme: yeti
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.width = 10, warning = F)
+source("functions.R")
+my_wd <- paste0(getwd(), "/data/")
+df <- imsbasics::load_rdata("df", my_wd)
+```
+
+# Titel 1 
+
+...
+
+## Titel 2 
+
+Bli Bla blu 
+
+ * ...
+ * ... 
+ * ...
+ 
+...
+
+
+# Auswertungen {.tabset}
+
+## Excavation Material
+
+```{r, fig.width=8.4, fig.height=7}
+plot3d(df, z_column = "exvac_material", z_lim = c(0,110))
+```
+
+## Self Sufficiency
+```{r, fig.width=8.4, fig.height=7}
+plot3d(df, z_column = "self_sufficiency", z_lim = c(0,110))
+```
+
+## Recycling Quota
+```{r, fig.width=8.4, fig.height=7}
+plot3d(df, z_column = "recyc_quota", z_lim = c(0,110))
+```
+
+
+# Conclusion 
+
+## ... 
